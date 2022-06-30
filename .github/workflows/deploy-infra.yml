@@ -7,7 +7,7 @@ on:
 env:
   # Change this if more then one user is deploying to
   # the same subscription
-  RESOURCE_GROUP_NAME: github-action-bicep-rg
+  RESOURCE_GROUP_NAME: rg-cosmos-challenges
   RESOURCE_GROUP_LOCATION: westeurope
   ENV_NAME: devd4
 
