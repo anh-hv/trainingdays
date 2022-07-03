@@ -1,0 +1,25 @@
+name: day4-scm-common
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - day4/apps/infrastructure/bicep/common/**
+      - .github/workflows/day4-scm-common.yml
+  pull_request:
+    branches:
+      - master
+    paths:
+      - day4/apps/infrastructure/bicep/common/**
+      - .github/workflows/day4-scm-common.yml
+
+jobs:
+  build:
+    if: github.repository == 'anh-hv/trainingdays'
+  ...
+  deploy-to-dev:
+    if: (github.repository == 'anh-hv/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
+  ...
+  delpoy-to-test:
+    if: (github.repository == 'anh-hv/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
